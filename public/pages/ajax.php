@@ -31,16 +31,16 @@
 			
 			if($res){
 				$escapedPost["success"] = "1";
-				$escapedPost["id"] = $res;
+				$escapedPost["tab1ident"] = $res;
 				echo json_encode($escapedPost);
 			}
 			else
 				echo $obj->error("save");
 		}else if($action == "del"){
-			$id = $_POST['rid'];
-			$res = $obj->delete_record($id);
+			$tab1ident = $_POST['rid'];
+			$res = $obj->delete_record($tab1ident);
 			if($res)
-				echo json_encode(array("success" => "1","id" => $id));	
+				echo json_encode(array("success" => "1","tab1ident" => $tab1ident));	
 			else
 				echo $obj->error("delete");
 		}
@@ -49,13 +49,13 @@
 			//$escapedPost = array_map('mysqli_real_escape_string', $_POST);
 			$escapedPost = array_map('htmlentities', $_POST);
 
-			$id = $obj->update_record($escapedPost);
-			if($id)
-				echo json_encode(array_merge(array("success" => "1","id" => $id),$escapedPost));	
+			$tab1ident = $obj->update_record($escapedPost);
+			if($tab1ident)
+				echo json_encode(array_merge(array("success" => "1","tab1ident" => $tab1ident),$escapedPost));	
 			else
 				echo $obj->error("update");
 		}
-		else if($action == "updatetd"){
+		/* else if($action == "updatetd"){
 			
 			//$escapedPost = array_map('mysqli_real_escape_string', $_POST);
 			$escapedPost = array_map('htmlentities', $_POST);
@@ -65,6 +65,6 @@
 				echo json_encode(array_merge(array("success" => "1","id" => $id),$escapedPost));	
 			else
 				echo $obj->error("updatetd");
-		}
+		} */
 	}
 ?>

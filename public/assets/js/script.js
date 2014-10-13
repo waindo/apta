@@ -110,7 +110,7 @@ $(document).ready(function(){
 	});
 
 	// td doubleclick event
-	$(document).on("dblclick","."+table+" td",function(e){
+	/* $(document).on("dblclick","."+table+" td",function(e){
 		// check if any other TD is in editing mode ? If so then dont show editing box
 		//alert(tdediting+"==="+editing);
 		var isEditingform = $(this).closest("tr").attr("class");
@@ -139,7 +139,7 @@ $(document).ready(function(){
 				tdediting = 1;
 			}
 		}
-	});
+	}); */
 	
 	// td lost focus event
 	

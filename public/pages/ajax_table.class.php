@@ -29,7 +29,7 @@ class ajax_table {
   function getRecords(){
   	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
   	mysqli_select_db($conn,DB_DB);
-  	$kueri = "select * from info";
+  	$kueri = "select * from tab1";
 	$this->res = mysqli_query( $conn, $kueri );
 	if(mysqli_num_rows($this->res)){
 		while($this->row = mysqli_fetch_assoc($this->res)){
@@ -48,7 +48,7 @@ class ajax_table {
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	  	mysqli_select_db($conn,DB_DB);
 	  	$values = implode("','", array_values($data));
-	  	$kueri2 = "insert into info (".implode(",",array_keys($data)).") values ('".$values."')";
+	  	$kueri2 = "insert into tab1 (".implode(",",array_keys($data)).") values ('".$values."')";
 		
 		mysqli_query($conn, $kueri2 );
 		
@@ -58,11 +58,11 @@ class ajax_table {
 	else return 0;	
   }	
 
-  function delete_record($id){
-	 if($id){
+  function delete_record($tab1ident){
+	 if($tab1ident){
 	 	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	  	mysqli_select_db($conn,DB_DB);
-		mysqli_query($conn, "delete from info where id = $id limit 1");
+		mysqli_query($conn, "delete from tab1 where tab1ident = $tab1ident limit 1");
 		return mysqli_affected_rows($conn);
 	 }
   }	
@@ -71,7 +71,7 @@ class ajax_table {
 	if(count($data)){
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	  	mysqli_select_db($conn,DB_DB);
-		$id = $data['rid'];
+		$tab1ident = $data['rid'];
 		unset($data['rid']);
 		$values = implode("','", array_values($data));
 		$str = "";
@@ -79,17 +79,17 @@ class ajax_table {
 			$str .= $key."='".$val."',";
 		}
 		$str = substr($str,0,-1);
-		$sql = "update info set $str where id = $id limit 1";
+		$sql = "update tab1 set $str where tab1ident = $tab1ident limit 1";
 
 		$res = mysqli_query($conn, $sql);
 		
-		if(mysqli_affected_rows($conn)) return $id;
+		if(mysqli_affected_rows($conn)) return $tab1ident;
 		return 0;
 	}
 	else return 0;	
   }	
 
-  function update_column($data){
+  /* function update_column($data){
 	if(count($data)){
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	  	mysqli_select_db($conn,DB_DB);
@@ -101,7 +101,7 @@ class ajax_table {
 		return 0;
 		
 	}	
-  }
+  } */
 
   function error($act){
 	 return json_encode(array("success" => "0","action" => $act));
