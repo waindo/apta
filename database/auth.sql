@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2014 at 04:31 PM
+-- Generation Time: Oct 13, 2014 at 08:17 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -45,6 +45,37 @@ INSERT INTO `info` (`id`, `fname`, `lname`, `tech`, `email`, `address`) VALUES
 (43, 'sas', 'sasa', 'sas', 'asas', 'asa'),
 (45, 'dsss', 'dsddd', 'dsd', 'dsd', 'sd'),
 (46, 'sa', 'sasasa', 'sas', 'asas', 'sa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tab1`
+--
+
+CREATE TABLE IF NOT EXISTS `tab1` (
+  `tab1ident` int(5) NOT NULL AUTO_INCREMENT,
+  `tab1kol01` text NOT NULL,
+  `tab1kol02` text NOT NULL,
+  `tab1kol03` text NOT NULL,
+  `tab1kol04` text NOT NULL,
+  `tab1kol05` text NOT NULL,
+  `tab1kol06` text NOT NULL,
+  `tab1kol07` text NOT NULL,
+  `tab1kol08` text NOT NULL,
+  `tab1kol09` text NOT NULL,
+  `tab1kol10` text NOT NULL,
+  PRIMARY KEY (`tab1ident`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `tab1`
+--
+
+INSERT INTO `tab1` (`tab1ident`, `tab1kol01`, `tab1kol02`, `tab1kol03`, `tab1kol04`, `tab1kol05`, `tab1kol06`, `tab1kol07`, `tab1kol08`, `tab1kol09`, `tab1kol10`) VALUES
+(2, 'sas', 'dad', 'ada', 'faf', 'ff', 'faf', 'afaf', 'faf', 'faf', 'fafa'),
+(3, 'dad', 'dad', 'dad', 'ada', 'dad', 'adad', 'addad', 'dada', 'ada', 'dada'),
+(4, 'ada', 'dad', 'adada', 'dad', 'dad', 'ada', 'dad', 'adad', 'dad', 'dada'),
+(5, 'aa', '-', '-', '-', '-', '-', '-', 'a', '-', '-');
 
 -- --------------------------------------------------------
 
