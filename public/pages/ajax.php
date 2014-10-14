@@ -40,7 +40,7 @@
 			$tab1ident = $_POST['rid'];
 			$res = $obj->delete_record($tab1ident);
 			if($res)
-				echo json_encode(array("success" => "1","tab1ident" => $tab1ident));	
+				echo json_encode(array("success" => "1","id" => $tab1ident));	
 			else
 				echo $obj->error("delete");
 		}
@@ -51,7 +51,7 @@
 
 			$tab1ident = $obj->update_record($escapedPost);
 			if($tab1ident)
-				echo json_encode(array_merge(array("success" => "1","tab1ident" => $tab1ident),$escapedPost));	
+				echo json_encode(array_merge(array("success" => "1","id" => $tab1ident),$escapedPost));	
 			else
 				echo $obj->error("update");
 		}

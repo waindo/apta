@@ -45,9 +45,11 @@
 					
 	</head>
 	<body>
-	@include('layout.navigation')
-
-			
+	<br><li><a href="{{ URL::route('home')}}">Home</a></li>
+	<li><a href="{{URL::route('account-logout')}}">Logout</a></li></br>	
+	<br><li><td><a href="{{URL::route('tabel')}}">TABEL</a></td>
+			</li></br>
+		
 			<table border="0" class="tableDemo bordered">
 					<tr class="ajaxTitle">
 						<th width="2%">No</th>

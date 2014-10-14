@@ -221,7 +221,7 @@ ajax = function (params,action){
 					$("tr[id='"+response.id+"'] td[class='"+columns[i]+"']").html(response[columns[i]]);
 				}
 			break;
-			case "updatetd":
+			/* case "updatetd":
 				//$("."+cancelbutton).trigger("click");
 				var newval = $("."+table+" tr[id='"+editingtrid+"'] td[class='"+editingtdcol+"']").find(inputs).val();
 				
@@ -232,8 +232,8 @@ ajax = function (params,action){
 				// remove editing flag
 				tdediting = 0;
 				$("."+table+" tr[id='"+editingtrid+"'] td[class='"+editingtdcol+"']").effect("highlight",{color: '#acfdaa'},1000);
-			break;
-		  }
+			break;*/
+		  } 
 		},
 		error: function(){
 			alert("Unexpected error, Please try again");
